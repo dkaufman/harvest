@@ -1,0 +1,46 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+}
+
+img {
+  border: 2px solid #1C1C1C;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#header {
+  font-family: 'Garamond';
+  text-align: center;
+  margin-top: 20px;
+}
+
+#header h1 {
+  font-size: 48px;
+}
+
+h2 {
+  text-align: center;
+}
+
+#nav {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.nav-item {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+.nav-item a {
+  color: #1C1C1C;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 7px 15px;
+}
+
+.nav-item a:hover {
+  text-decoration: none;
+  border-color: #1C1C1C;
+}
