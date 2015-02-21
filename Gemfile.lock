@@ -6,7 +6,6 @@ GEM
     rack (1.6.0)
     rack-protection (1.5.3)
       rack
-    sass (3.4.12)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -18,5 +17,4 @@ PLATFORMS
 
 DEPENDENCIES
   haml
-  sass
   sinatra
