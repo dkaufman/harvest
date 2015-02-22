@@ -1,5 +1,5 @@
 var map;
-var harvard_square = new google.maps.LatLng(42.375298, -71.124127);
+var harvard_square = new google.maps.LatLng(42.374390, -71.124143);
 
 var MY_MAPTYPE_ID = 'custom_style';
 
@@ -10,6 +10,7 @@ function initialize() {
   var mapOptions = {
     zoom: 16,
     center: harvard_square,
+    scrollwheel: false,
     mapTypeControlOptions: {
       mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
     },
