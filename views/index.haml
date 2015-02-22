@@ -1,6 +1,7 @@
 %head
   %link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css")
   %link(rel="stylesheet" href="stylesheet.css" type="text/css")
+  %script(type="text/javascript" src="smooth_scroll.js")
 %body
   %section#header
     .container
@@ -13,19 +14,19 @@
       .row
         .col-sm-8.col-sm-offset-2
           .nav-item
-            %a(href='#wedding')
+            %a(href='#wedding' data-scroll)
               Wedding
           .nav-item
-            %a(href='#travel')
+            %a(href='#travel' data-scroll)
               Travel
           .nav-item
-            %a(href='#photos')
+            %a(href='#photos' data-scroll)
               Photos
           .nav-item
-            %a(href='#registry')
+            %a(href='#registry' data-scroll)
               Registry
           .nav-item
-            %a(href='#rsvp')
+            %a(href='#rsvp' data-scroll)
               RSVP
 
   #nav-clear
@@ -90,3 +91,6 @@
       .row
         .col-sm-4.col-sm-offset-4
           %img(src="//s3.amazonaws.com/harvest-assets/katy-sand-750.jpg" class="img-responsive")
+
+%script
+  smoothScroll.init();
