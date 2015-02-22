@@ -1,7 +1,11 @@
 %head
   %link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css")
   %link(rel="stylesheet" href="stylesheet.css" type="text/css")
+  %script(src="//code.jquery.com/jquery-1.11.2.min.js")
   %script(type="text/javascript" src="smooth_scroll.js")
+  %script(src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true")
+  %script(type="text/javascript" src="map.js")
+
 %body
   %section#header
     .container
@@ -29,7 +33,6 @@
             %a(href='#rsvp' data-scroll)
               RSVP
 
-  #nav-clear
   %section.splash
     .container
       .row
@@ -52,7 +55,7 @@
       .row
         .col-sm-8.col-sm-offset-2
           %h2 Travel & Accomodations
-          Gingerbread donut sugar plum tootsie roll sweet dessert gummi bears. Candy canes carrot cake biscuit gingerbread. Dessert chupa chups sugar plum halvah. Soufflé topping chocolate cake jelly ice cream halvah cookie candy wafer. Gingerbread sweet sweet caramels oat cake candy canes. Cake jujubes cake brownie jelly. Gingerbread cotton candy gummies. Sweet roll danish tootsie roll. Dragée fruitcake sesame snaps sweet roll powder. Macaroon cake brownie candy bear claw topping topping pastry sugar plum.
+          #map-canvas
   %section.splash
     .container
       .row
@@ -93,4 +96,14 @@
           %img(src="//s3.amazonaws.com/harvest-assets/katy-sand-750.jpg" class="img-responsive")
 
 %script
-  smoothScroll.init();
+  smoothScroll.init({offset: 60});
+
+  $(window).scroll(function(e) {
+  if ($(window).scrollTop() > 130) {
+  $('#nav').addClass("fixed-nav");
+  $('body').addClass("body-fixed-nav");
+  } else {
+  $('#nav').removeClass("fixed-nav");
+  $('body').removeClass("body-fixed-nav");
+  }
+  });
