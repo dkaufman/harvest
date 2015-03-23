@@ -105,13 +105,29 @@
     .container
       .row
         .col-sm-4.col-sm-offset-4
-          %h2 RSVP s'il vous plait
-          %input.form-control(placeholder="RSVP")
-  %section.splash
-    .container
-      .row
-        .col-sm-4.col-sm-offset-4
-          %img(src="//s3.amazonaws.com/harvest-assets/katy-sand-1k.jpg" class="img-responsive")
+          %h2 RSVP
+          - if params[:responded]
+            %h4.center Thanks for responding!
+          - else
+            %form(action="/rsvp#rsvp" method="post")
+              .form-group
+                %label{:for => "name"} Your Name
+                %input#name.form-control{name: 'response[name]', type: 'text'}
+              .form-group
+                %label{:for => "email"} Email address (optional)
+                %input#email.form-control{name: 'response[email]', type: 'email'}
+              .radio
+                %label
+                  %input{checked: 'checked', name: 'reponse[attending]', type: 'radio', :value => '1'}/
+                  Yes, I'd love to attend.
+              .radio
+                %label
+                  %input{name: 'reponse[attending]', type: 'radio', :value => '0'}/
+                  Sorry, I can't make it.
+              .form-group
+                %label{:for => "additional-information"} Anything else you want us to know?
+                %textarea#additional-information.form-control{name: 'response[additional_information]'}
+              %button.btn.btn-default{:type => "submit"} Submit
 
 %script
   smoothScroll.init({offset: 60});

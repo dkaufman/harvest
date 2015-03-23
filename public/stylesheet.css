@@ -26,7 +26,7 @@ a:hover, a:visited, a:focus {
   font-size: 48px;
 }
 
-h2 {
+h2, h4 {
   text-align: center;
 }
 
