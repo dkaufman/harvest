@@ -1,19 +1,18 @@
 body {
   font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+  padding-bottom: 50px;
 }
 
 body.body-fixed-nav {
   padding-top: 33px;
 }
 
-a:hover, a:visited, a:focus {
-  text-decoration: none
+#welcome {
+  margin-top: 30px;
 }
 
-.splash img {
-  border: 2px solid #1C1C1C;
-  margin-top: 20px;
-  margin-bottom: 20px;
+a:hover, a:visited, a:focus {
+  text-decoration: none;
 }
 
 #header {
@@ -68,5 +67,23 @@ h2, h4 {
 }
 
 #map-canvas {
-  height: 400px;
+  height: 600px;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+section h2 {
+  margin-bottom: 30px;
+  font-family: 'Garamond';
+}
+
+.hotels {
+  margin-top: 30px;
+}
+
+.hotel {
+  text-align: center;
+  margin-bottom: 30px;
 }

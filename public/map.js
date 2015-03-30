@@ -8,7 +8,7 @@ function initialize() {
   var featureOpts = [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
 
   var mapOptions = {
-    zoom: 16,
+    zoom: 13,
     center: harvard_square,
     scrollwheel: false,
     mapTypeControlOptions: {
@@ -45,6 +45,31 @@ function initialize() {
       map: map,
       title: 'Charles Hotel'
   });
+
+  var le_meridien = new google.maps.Marker({
+      position: new google.maps.LatLng(42.362153, -71.100004),
+      map: map,
+      title: 'Le Meridien'
+  });
+
+  var courtyard = new google.maps.Marker({
+      position: new google.maps.LatLng(42.3586102,-71.1149609),
+      map: map,
+      title: 'Courtyard by Marriott'
+  });
+
+  var homewood_suites = new google.maps.Marker({
+      position: new google.maps.LatLng(42.401846,-71.13615),
+      map: map,
+      title: 'Homewood Suites'
+  });
+
+  var best_western = new google.maps.Marker({
+      position: new google.maps.LatLng(42.388608,-71.142227),
+      map: map,
+      title: 'Best Western Hotel Plus Tria'
+  });
+
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);

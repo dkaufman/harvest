@@ -68,51 +68,317 @@
               %span.glyphicon.glyphicon-chevron-right{"aria-hidden" => "true"}
               %span.sr-only Next
 
+  %section#welcome
+    .container
+      .row
+        .col-sm-10.col-sm-offset-1
+          %p We are so excited to celebrate our marriage surrounded by friends and family, and we hope you can join us! We’ve provided information about the wedding, travel, and accommodations, but feel free to contact us if you have any other questions.
+          %p - Dan and Katy
   %section#wedding
     .container
       .row
         .col-sm-10.col-sm-offset-1
-          %h2 Wedding & Reception
-          %p Dragée chocolate cake cookie pie. Donut dessert chocolate bar. Chocolate bar wafer lollipop. Sugar plum donut tiramisu croissant marshmallow croissant cake danish. Cake tootsie roll chocolate cake sweet bear claw tootsie roll. Tootsie roll halvah apple pie. Chocolate bar brownie bonbon sweet roll.
+          %h2 Ceremony & Reception
+      .row.text-center
+        .col-sm-5.col-sm-offset-1
+          %h4 Ceremony
+          %p Late afternoon (exact start time TBD)
+          %address
+            %div St. John's Memorial Chapel
+            %div Episcopal Divinity School
+            %div 99 Brattle Street
+            %div Cambridge, MA 02138
+        .col-sm-5
+          %h4 Reception
+          %p Immediately following ceremony
+          %address
+            %div Harvest Restaurant
+            %div 44 Brattle Street
+            %div Cambridge, MA 02138
+      .row
+        .col-sm-10.col-sm-offset-1
+          %p Harvest is a 5-minute walk from the chapel. The entrance is set back from Brattle street on the walkway just across from the intersection of Church and Brattle.
+          %p Both the ceremony and reception will be held indoors, although Harvest has an outdoor patio for guests.
+
   %section#travel
     .container
       .row
         .col-sm-10.col-sm-offset-1
           %h2 Travel & Accomodations
-          #map-canvas
+      .row
+        .col-sm-10.col-sm-offset-1
+          %h3.text-center Where to stay
+          %p Boston is a very popular travel destination on Columbus Day Weekend, so we recommend booking travel and accommodations as early as possible. We have hotel blocks reserved at the following hotels, but there are many hotels in the area.
+          .hotels
+            .row
+              .col-sm-4
+                .hotel
+                  %h4.hotel-name Charles Hotel
+                  %p
+                    %div Room rate - $399
+                    %em Discounted rate available until September 10, 2015
+                    %div 0.4 miles from ceremony
+                  %button.btn.btn-default{ data: { toggle: 'modal', target: '#charles-hotel' }} View More
+              .col-sm-4
+                .hotel
+                  %h4.hotel-name Le Meridien
+                  %p
+                    %div Room rate - $279
+                    %em Discounted rate available until September 9, 2015
+                    %div 1.5 miles from ceremony
+                  %button.btn.btn-default{ data: { toggle: 'modal', target: '#le-meridien' }} View More
+              .col-sm-4
+                .hotel
+                  %h4.hotel-name Courtyard by Marriott Boston-Cambridge
+                  %p
+                    %div Room rate - $259
+                    %em Discounted rate available until August 28, 2015
+                    %div 1.5 miles from ceremony
+                  %button.btn.btn-default{ data: { toggle: 'modal', target: '#courtyard-marriott' }} View More
+            .row
+              .col-sm-4
+                .hotel
+                  %h4.hotel-name Homewood Suites
+                  %p
+                    %div Room rate - $279 (free parking)
+                    %em Discounted rate available until August 5, 2015
+                    %div 3 miles from ceremony
+                  %button.btn.btn-default{ data: { toggle: 'modal', target: '#homewood-suites' }} View More
+              .col-sm-4
+                .hotel
+                  %h4.hotel-name Best Western Hotel Plus Tria
+                  %p
+                    %div Room rate - $259 (free parking)
+                    %em Discounted rate available until September 9, 2015
+                    %div 2.5 miles from ceremony
+                  %button.btn.btn-default{ data: { toggle: 'modal', target: '#best-western' }} View More
+      .row
+        .col-sm-10.col-sm-offset-1
+          %h3.text-center How to get around
+          .row
+            .col-sm-6
+              %h4 Parking
+              %p
+                Street parking is extremely limited in Harvard Square. If you wish to drive to the wedding, we recommend leaving plenty of extra time to find a spot, or planning to park in one of the many garages in Harvard Square.
+            .col-sm-6
+              %h4 Public Transportation
+              %p
+                The subway (called the “T”) runs to Harvard Square via the Red Line. The ceremony is about a 7 minute walk (0.4 miles) from the main subway station in Harvard Square. The reception is a 3 minute walk from the station.
+  %section#map
+    .row
+      .col-sm-10.col-sm-offset-1
+        #map-canvas
   %section#registry
     .container
       .row
         .col-sm-10.col-sm-offset-1
           %h2 Registry
-          Cake sugar plum marshmallow sugar plum cheesecake danish. Sugar plum fruitcake pie marshmallow marzipan sweet roll danish. Cotton candy brownie chocolate bar pie pudding pastry tart dragée. Jelly muffin chocolate cake dragée. Gummi bears candy canes sugar plum pastry donut. Brownie pastry liquorice apple pie sesame snaps. Pastry dessert dragée dragée oat cake. Cake danish lollipop.
+          %em Nothing to report yet! Probably some combination of Lululemon, Rogue Fitness, and Modern Anthology.
   %section#rsvp
     .container
       .row
-        .col-sm-4.col-sm-offset-4
+        .col-sm-10.col-sm-offset-1
           %h2 RSVP
           - if params[:responded]
-            %h4.center Thanks for responding!
+            %h4 Thanks for responding!
           - else
             %form(action="/rsvp#rsvp" method="post")
-              .form-group
-                %label{:for => "name"} Your Name
-                %input#name.form-control{name: 'response[name]', type: 'text'}
-              .form-group
-                %label{:for => "email"} Email address (optional)
-                %input#email.form-control{name: 'response[email]', type: 'email'}
-              .radio
-                %label
-                  %input{checked: 'checked', name: 'reponse[attending]', type: 'radio', :value => '1'}/
-                  Yes, I'd love to attend.
-              .radio
-                %label
-                  %input{name: 'reponse[attending]', type: 'radio', :value => '0'}/
-                  Sorry, I can't make it.
-              .form-group
-                %label{:for => "additional-information"} Anything else you want us to know?
-                %textarea#additional-information.form-control{name: 'response[additional_information]'}
-              %button.btn.btn-default{:type => "submit"} Submit
+              .row
+                .col-sm-6
+                  .form-group
+                    %label{:for => "name"} Your Name
+                    %input#name.form-control{name: 'response[name]', type: 'text'}
+                .col-sm-6
+                  .form-group
+                    %label{:for => "email"} Email address (optional)
+                    %input#email.form-control{name: 'response[email]', type: 'email'}
+              .row
+                .col-sm-6
+                  .radio
+                    %label
+                      %input{checked: 'checked', name: 'reponse[attending]', type: 'radio', :value => '1'}/
+                      Yes, I'd love to attend.
+                  .radio
+                    %label
+                      %input{name: 'reponse[attending]', type: 'radio', :value => '0'}/
+                      Sorry, I can't make it.
+                .col-sm-6
+                  .form-group
+                    %label{:for => "additional-information"} Anything else you want us to know?
+                    %textarea#additional-information.form-control{name: 'response[additional_information]'}
+              %button.btn.btn-default.pull-right{:type => "submit"} Submit
+
+  .modal.fade#charles-hotel
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: "button"}
+            %span{"aria-hidden" => "true"} ×
+          %h4.text-left Charles Hotel
+        .modal-body
+          .row
+            .col-sm-4
+              %address
+                %div 1 Bennett Street
+                %div Cambridge, MA 02139
+                %div 617-864-1200
+                %a(href='http://www.charleshotel.com/') Link to site
+            .col-sm-8
+              %p The Charles Hotel is right in the middle of Harvard Square, and very close to the ceremony and receptions venues.
+          %hr
+          %h5 Additional Information
+          %ul
+            %li $399/night with group rate
+            %li $XX/day for parking
+            %li Room block held until: 9/10/2015
+          %hr
+          %h5 Booking Instructions
+          To book a room at the group rate, visit
+          %a(href='https://www.phgsecure.com/IBE/bookingRedirect.ashx?propertyCode=BOSCH&group=WilKau15&arrivalDate=10/08/2015&departureDate=10/12/2015&numberOfAdults=1')
+            this link.
+
+          %p
+            You can also call the hotel and mention the Willemin-Kaufman wedding room block.
+
+          %p
+            Or, follow these instructions to book online:
+            %ol
+              %li Go to the hotel’s website www.charleshotel.com
+              %li Click on the “Reservations” button on the top right of the screen
+              %li Once you’re in the booking window, enter the dates for your stay
+              %li Enter the Group Code: WilKau15
+              %li Click “Check Availability”
+              %li Click “View Available Rooms”
+              %li Select the room type preferred
+              %li Complete the contact and billing information
+              %li The guest will be emailed a confirmation number
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+
+  .modal.fade#le-meridien
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: "button"}
+            %span{"aria-hidden" => "true"} ×
+          %h4.text-left Le Meridien
+        .modal-body
+          .row
+            .col-sm-4
+              %address
+                %div 20 Sidney Street
+                %div Cambridge, MA 02139
+                %div 617-577-0200
+                %a(href='http://www.starwoodhotels.com/lemeridien/property/overview/index.html?propertyID=3253') Link to site
+            .col-sm-8
+              %p Located in Central Square in Cambridge, Le Meridien has plenty to do and see within easy walking distance. It is easily accessible by public transportation as it is directly on the Red Line.
+          %hr
+          %h5 Additional Information
+          %ul
+            %li 1.5 miles (10-15 minutes driving) to Harvard Square (ceremony and reception location)
+            %li 0.3 miles from the Central Square T station, which is one stop on the Red Line to Harvard Square
+            %li $279/night for Deluxe Room with group rate
+            %li $28-$32/day for parking
+            %li Room block held until: 9/9/2015
+          %hr
+          %h5 Booking Instructions
+          To book a room at the group rate, visit this link. (TK)
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+
+  .modal.fade#courtyard-marriott
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: "button"}
+            %span{"aria-hidden" => "true"} ×
+          %h4.text-left Courtyard by Marriott Boston-Cambridge
+        .modal-body
+          .row
+            .col-sm-4
+              %address
+                %div 777 Memorial Drive
+                %div Cambridge, MA 02139
+                %div 617-492-7777
+                %a(href='http://www.marriott.com/hotels/travel/boscy-courtyard-boston-cambridge/') Link to site
+            .col-sm-8
+          %hr
+          %h5 Additional Information
+          %ul
+            %li 1.5 miles (5 minutes driving) to Harvard Square (ceremony and reception location)
+            %li 1 mile from Central Square T station, which is one stop on the Red Line to Harvard Square
+            %li $259/night for Deluxe Room with group rate
+            %li $32/day for parking
+            %li Shuttle available within 1 mile radius of hotel (includes Harvard Square)
+            %li Room block held until: 8/28/2015
+          %hr
+          %h5 Booking Instructions
+          To book a room at the group rate, visit this link. (TK)
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+
+  .modal.fade#best-western
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: "button"}
+            %span{"aria-hidden" => "true"} ×
+          %h4.text-left Best Western Hotel Plus Tria
+        .modal-body
+          .row
+            .col-sm-5
+              %address
+                %div 220 Alewife Brook Pkwy
+                %div Cambridge, MA, 02138
+                %div 617-491-8000
+                %div For Reservations: 1-866-333-TRIA
+                %a(href='http://www.hoteltria.com/') Link to site
+            .col-sm-7
+          %hr
+          %h5 Additional Information
+          %ul
+            %li 2.5 miles (15 minutes driving) to Harvard Square (ceremony and reception location)
+            %li 0.6 miles from the Alewife T station, which is on the Red Line, and 3 stops from Harvard Square
+            %li $259/night with group rate
+            %li Breakfast included
+            %li Free parking (with group rate reservation)
+            %li Room block held until: 9/9/2015
+          %hr
+          %h5 Booking Instructions
+          Reservations can be made by calling reservations at 617-491-8000 or toll free at 866-333-TRIA (8742), and referencing the group name “The Willemin-Kaufman Wedding Party.”
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+
+  .modal.fade#homewood-suites
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: "button"}
+            %span{"aria-hidden" => "true"} ×
+          %h4.text-left Homewood Suites
+        .modal-body
+          .row
+            .col-sm-4
+              %address
+                %div 1 Massachusetts Avenue
+                %div Arlington, MA 02474
+                %div 781-643-7258
+                %a(href='http://homewoodsuites3.hilton.com/en/hotels/massachusetts/homewood-suites-by-hilton-boston-cambridge-arlington-ma-BOSARHW/index.html') Link to site
+            .col-sm-8
+              %p Homewood Suites is located on the Cambridge-Arlington border. It is directly on a bus route (77) that runs to Harvard Square (where you can get on the T), and it is also near Alewife Station, which is the end of the Red Line. If you are going to have a car, note that Homewood Suites has free parking.
+          %hr
+          %h5 Additional Information
+          %ul
+            %li 3 miles (15 minutes driving) to Harvard Square (ceremony and reception location)
+            %li $279/night for queen bed; $299/night for king bed with group rate
+            %li Breakfast included
+            %li Free parking
+            %li Room block held until: 8/5/2015
+          %hr
+          %h5 Booking Instructions
+          To book a room at the group rate, visit this link. (TK)
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
 
 %script
   smoothScroll.init({offset: 60});
