@@ -25,19 +25,36 @@
     .container
       .row
         .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
-          .row
-            .col-xs-3
-              %a(href='#wedding' data-scroll)
-                Wedding
-            .col-xs-3
-              %a(href='#travel' data-scroll)
-                Travel
-            .col-xs-3
-              %a(href='#registry' data-scroll)
-                Registry
-            .col-xs-3
-              %a(href='#rsvp' data-scroll)
-                RSVP
+          .hidden-xs
+            .row
+              .col-sm-3
+                %a(href='#wedding' data-scroll)
+                  Wedding
+              .col-sm-3
+                %a(href='#travel' data-scroll)
+                  Travel
+              .col-sm-3
+                %a(href='#registry' data-scroll)
+                  Registry
+              .col-sm-3
+                %a(href='#rsvp' data-scroll)
+                  RSVP
+          .visible-xs.nav-mobile
+            .row
+              .col-xs-6
+                %a(href='#wedding' data-scroll)
+                  Wedding
+              .col-xs-6
+                %a(href='#travel' data-scroll)
+                  Travel
+            .mobile-spacer
+            .row
+              .col-xs-6
+                %a(href='#registry' data-scroll)
+                  Registry
+              .col-xs-6
+                %a(href='#rsvp' data-scroll)
+                  RSVP
 
   %section
     .container
@@ -160,6 +177,7 @@
               %h4 Parking
               %p
                 Street parking is extremely limited in Harvard Square. If you wish to drive to the wedding, we recommend leaving plenty of extra time to find a spot, or planning to park in one of the many garages in Harvard Square.
+            .mobile-spacer.visible-xs
             .col-sm-6
               %h4 Public Transportation
               %p

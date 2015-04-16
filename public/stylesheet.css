@@ -7,6 +7,10 @@ p {
   font-size: 18px;
 }
 
+.mobile-spacer {
+  height: 20px;
+}
+
 body.body-fixed-nav {
   padding-top: 33px;
 }
@@ -52,12 +56,23 @@ h2, h3, h4 {
   margin-bottom: 25px;
 }
 
+#nav .nav-link {
+  width: 24%;
+  display: inline-block;
+}
+
 #nav a {
   color: #1C1C1C;
   text-transform: uppercase;
   border: 1px solid transparent;
   border-radius: 3px;
   padding: 7px 15px;
+}
+
+#nav .nav-mobile a {
+  border-bottom: 2px black solid;
+  padding: 0;
+  border-radius: 0;
 }
 
 #nav .col-xs-3:first-of-type {
