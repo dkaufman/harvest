@@ -118,3 +118,11 @@ address {
 #rsvp label {
   font-family: 'Montserrat', sans-serif;
 }
+
+.modal p, .modal li {
+  font-size: 16px;
+}
+
+.modal h4 {
+  text-align: left;
+}
