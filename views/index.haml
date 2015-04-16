@@ -24,7 +24,7 @@
   %section#nav
     .container
       .row
-        .col-sm-10.col-sm-offset-1
+        .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
           .row
             .col-xs-3
               %a(href='#wedding' data-scroll)
@@ -42,7 +42,7 @@
   %section
     .container
       .row
-        .col-sm-10.col-sm-offset-1
+        .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
           #carousel.carousel.slide{"data-ride" => "carousel"}
             %ol.carousel-indicators
               %li.active{"data-slide-to" => "0", "data-target" => "#carousel"}
@@ -71,13 +71,13 @@
   %section#welcome
     .container
       .row
-        .col-sm-10.col-sm-offset-1
+        .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
           %p We are so excited to celebrate our marriage surrounded by friends and family, and we hope you can join us! We’ve provided information about the wedding, travel, and accommodations, but feel free to contact us if you have any other questions.
           %p - Dan and Katy
   %section#wedding
     .container
       .row
-        .col-sm-10.col-sm-offset-1
+        .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
           %h2 Ceremony & Reception
       .row.text-center
         .col-sm-5.col-sm-offset-1
@@ -96,17 +96,17 @@
             %div 44 Brattle Street
             %div Cambridge, MA 02138
       .row
-        .col-sm-10.col-sm-offset-1
+        .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
           %p Harvest is a 5-minute walk from the chapel. The entrance is set back from Brattle street on the walkway just across from the intersection of Church and Brattle.
           %p Both the ceremony and reception will be held indoors, although Harvest has an outdoor patio for guests.
 
   %section#travel
     .container
       .row
-        .col-sm-10.col-sm-offset-1
+        .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
           %h2 Travel & Accomodations
       .row
-        .col-sm-10.col-sm-offset-1
+        .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
           %h3.text-center Where to stay
           %p Boston is a very popular travel destination on Columbus Day Weekend, so we recommend booking travel and accommodations as early as possible. We have hotel blocks reserved at the following hotels, but there are many hotels in the area.
           .hotels
@@ -153,7 +153,7 @@
                     %div 2.5 miles from ceremony
                   %button.btn.btn-default{ data: { toggle: 'modal', target: '#best-western' }} View More
       .row
-        .col-sm-10.col-sm-offset-1
+        .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
           %h3.text-center How to get around
           .row
             .col-sm-6
@@ -165,19 +165,21 @@
               %p
                 The subway (called the “T”) runs to Harvard Square via the Red Line. The ceremony is about a 7 minute walk (0.4 miles) from the main subway station in Harvard Square. The reception is a 3 minute walk from the station.
   %section#map
-    .row
-      .col-sm-10.col-sm-offset-1
-        #map-canvas
+    .container
+      .row
+        .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
+          #map-canvas
   %section#registry
     .container
       .row
-        .col-sm-10.col-sm-offset-1
+        .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
           %h2 Registry
-          %em Nothing to report yet! Probably some combination of Lululemon, Rogue Fitness, and Modern Anthology.
+          %p
+            %em Nothing to report yet! Probably some combination of Lululemon, Rogue Fitness, and Modern Anthology.
   %section#rsvp
     .container
       .row
-        .col-sm-10.col-sm-offset-1
+        .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
           %h2 RSVP
           - if params[:responded]
             %h4 Thanks for responding!
