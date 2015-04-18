@@ -28,18 +28,6 @@ function initialize() {
 
   map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
 
-  var harvest_marker = new google.maps.Marker({
-      position: new google.maps.LatLng(42.3737792,-71.1218861),
-      map: map,
-      title: 'Harvest'
-  });
-
-  var chapel_marker = new google.maps.Marker({
-      position: new google.maps.LatLng(42.376360, -71.124655),
-      map: map,
-      title: 'Episcopal Divinity School'
-  });
-
   var charles_hotel = new google.maps.Marker({
       position: new google.maps.LatLng(42.372298,-71.123068),
       map: map,
@@ -70,6 +58,81 @@ function initialize() {
       title: 'Best Western Hotel Plus Tria'
   });
 
+  var harvest_marker = new google.maps.Marker({
+      position: new google.maps.LatLng(42.3737792,-71.1218861),
+      map: map,
+      title: 'Harvest',
+      icon: 'images/blue_marker.png'
+  });
+
+  var chapel_marker = new google.maps.Marker({
+      position: new google.maps.LatLng(42.376360, -71.124655),
+      map: map,
+      title: 'Episcopal Divinity School',
+      icon: 'images/blue_marker.png'
+  });
+
+
+  var harvestContentString = '<div class="content">Harvest</div>';
+  var harvestInfowindow = new google.maps.InfoWindow({
+      content: harvestContentString
+  });
+
+  var harvestContentString = '<div class="content">Harvest - Reception Site</div>';
+  var harvestInfowindow = new google.maps.InfoWindow({
+      content: harvestContentString
+  });
+  google.maps.event.addListener(harvest_marker, 'click', function() {
+    harvestInfowindow.open(map,harvest_marker);
+  });
+
+  var chapelContentString = '<div class="content">Episcopal Divinity School - Ceremony Site</div>';
+  var chapelInfowindow = new google.maps.InfoWindow({
+      content: chapelContentString
+  });
+  google.maps.event.addListener(chapel_marker, 'click', function() {
+    chapelInfowindow.open(map,chapel_marker);
+  });
+
+  var charlesHotelContentString = '<div class="content">Charles Hotel</div>';
+  var charlesHotelInfowindow = new google.maps.InfoWindow({
+      content: charlesHotelContentString
+  });
+  google.maps.event.addListener(charles_hotel, 'click', function() {
+    charlesHotelInfowindow.open(map,charles_hotel);
+  });
+
+  var leMeridienContentString = '<div class="content">Le Meridien Hotel</div>';
+  var leMeridienInfowindow = new google.maps.InfoWindow({
+      content: leMeridienContentString
+  });
+  google.maps.event.addListener(le_meridien, 'click', function() {
+    leMeridienInfowindow.open(map,le_meridien);
+  });
+
+  var courtyardContentString = '<div class="content">Courtyard by Marriott</div>';
+  var courtyardInfowindow = new google.maps.InfoWindow({
+      content: courtyardContentString
+  });
+  google.maps.event.addListener(courtyard, 'click', function() {
+    courtyardInfowindow.open(map,courtyard);
+  });
+
+  var homewoodSuitesContentString = '<div class="content">Homewood Suites</div>';
+  var homewoodSuitesInfowindow = new google.maps.InfoWindow({
+      content: homewoodSuitesContentString
+  });
+  google.maps.event.addListener(homewood_suites, 'click', function() {
+    homewoodSuitesInfowindow.open(map,homewood_suites);
+  });
+
+  var bestWesternContentString = '<div class="content">Best Western Hotel Plus Tria</div>';
+  var bestWesternInfowindow = new google.maps.InfoWindow({
+      content: bestWesternContentString
+  });
+  google.maps.event.addListener(best_western, 'click', function() {
+    bestWesternInfowindow.open(map,best_western);
+  });
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
