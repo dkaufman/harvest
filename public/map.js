@@ -72,6 +72,13 @@ function initialize() {
       icon: 'images/blue_marker.png'
   });
 
+  var tavern_marker = new google.maps.Marker({
+      position: new google.maps.LatLng(42.3731082,-71.1194276),
+      map: map,
+      title: 'Russell House Tavern',
+      icon: 'images/blue_marker.png'
+  });
+
 
   var harvestContentString = '<div class="content">Harvest</div>';
   var harvestInfowindow = new google.maps.InfoWindow({
@@ -92,6 +99,14 @@ function initialize() {
   });
   google.maps.event.addListener(chapel_marker, 'click', function() {
     chapelInfowindow.open(map,chapel_marker);
+  });
+
+  var tavernContentString = '<div class="content">Russell House Tavern - Friday Night</div>';
+  var tavernInfowindow = new google.maps.InfoWindow({
+      content: tavernContentString
+  });
+  google.maps.event.addListener(tavern_marker, 'click', function() {
+    tavernInfowindow.open(map,tavern_marker);
   });
 
   var charlesHotelContentString = '<div class="content">Charles Hotel</div>';

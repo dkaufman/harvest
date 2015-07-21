@@ -114,7 +114,7 @@
       .row.text-center
         .col-sm-5.col-sm-offset-1
           %h4 Ceremony
-          %p Late afternoon (exact start time TBD)
+          %p 4:30 PM
           %address
             %div St. John's Memorial Chapel
             %div Episcopal Divinity School
@@ -131,9 +131,24 @@
         .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
           %p Harvest is a 5-minute walk from the chapel. The entrance is set back from Brattle street on the walkway just across from the intersection of Church and Brattle.
           %p Both the ceremony and reception will be held indoors, although Harvest has an outdoor patio for guests.
+    .container
+      .row
+        .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
+          %h2 Friday Night
+      .row
+        .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
           %p
-            %strong Friday:
-            We are also planning to have a casual gathering the evening of Friday, the 9th, for friends and family. More information to come.
+            Everyone is invited to Russell House Tavern in Harvard Square on Friday night for drinks and small plates.
+            Please RSVP at the bottom of the page. We hope to see you there!
+      .row.text-center
+        .col-sm-12
+          %h4 Details
+          %p 7:00 PM to 10:00 PM
+          %address
+            %div Russell House Tavern
+            %div 14 John F. Kennedy St
+            %div Harvard Sqaure
+            %div Cambridge, MA 02138
 
   %section#travel
     .container
@@ -221,7 +236,11 @@
         .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
           %h2 Registry
           %p
-            %em Registry information coming soon.
+            We've registered at Williams-Sonoma under the names Katy Willemin and Daniel Kaufman.
+            %br
+            %a(href='https://secure.williams-sonoma.com/registry/ntsdp8jrv8/registry-list.html' target='_blank')
+              Click here
+            to view our registry online.
   %section#rsvp
     .container
       .row
@@ -242,14 +261,26 @@
                     %input#email.form-control{name: 'response[email]', type: 'email'}
               .row
                 .col-sm-6
+                  %label Will you be attending the wedding and reception on Saturday?
                   .radio
                     %label
-                      %input{checked: 'checked', name: 'reponse[attending]', type: 'radio', :value => '1'}/
+                      %input{checked: 'checked', name: 'response[attending]', type: 'radio', :value => '1'}/
                       Yes, I'd love to attend.
                   .radio
                     %label
-                      %input{name: 'reponse[attending]', type: 'radio', :value => '0'}/
+                      %input{name: 'response[attending]', type: 'radio', :value => '0'}/
                       Sorry, I can't make it.
+                .col-sm-6
+                  %label Will you be attending the event at Russell House Tavern on Friday?
+                  .radio
+                    %label
+                      %input{name: 'response[attending_rehearsal]', type: 'radio', :value => '1'}/
+                      Yes, I'd love to attend.
+                  .radio
+                    %label
+                      %input{name: 'response[attending_rehearsal]', type: 'radio', :value => '0'}/
+                      Sorry, I can't make it.
+              .row
                 .col-sm-6
                   .form-group
                     %label{:for => "additional-information"} Anything else you want us to know?
