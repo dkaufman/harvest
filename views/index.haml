@@ -264,21 +264,21 @@
                   %label Will you be attending the wedding and reception on Saturday?
                   .radio
                     %label
-                      %input{checked: 'checked', name: 'response[attending]', type: 'radio', :value => '1'}/
+                      %input#attending-wedding-true{checked: 'checked', name: 'response[attending]', type: 'radio', :value => '1'}/
                       Yes, I'd love to attend.
                   .radio
                     %label
-                      %input{name: 'response[attending]', type: 'radio', :value => '0'}/
+                      %input#attending-wedding-false{name: 'response[attending]', type: 'radio', :value => '0'}/
                       Sorry, I can't make it.
                 .col-sm-6
                   %label Will you be attending the event at Russell House Tavern on Friday?
                   .radio
                     %label
-                      %input{name: 'response[attending_rehearsal]', type: 'radio', :value => '1'}/
+                      %input#attending-rehearsal-true{name: 'response[attending_rehearsal]', type: 'radio', :value => '1'}/
                       Yes, I'd love to attend.
                   .radio
                     %label
-                      %input{name: 'response[attending_rehearsal]', type: 'radio', :value => '0'}/
+                      %input#attending-rehearsal-false{name: 'response[attending_rehearsal]', type: 'radio', :value => '0'}/
                       Sorry, I can't make it.
               .row
                 .col-sm-6
