@@ -2,3 +2,7 @@ development:
   adapter: postgresql
   database: harvest_dev
   host: localhost
+
+production:
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
